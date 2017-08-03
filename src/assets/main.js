@@ -1,11 +1,10 @@
-//let answer = document.getElementById('answer');
-//let attempt = document.getElementById('attempt');
+let answer = document.getElementById('answer');
+let attempt = document.getElementById('attempt');
 
 
 
 //implement new functions here
-function setHiddenFields(){
-    let answer = document.getElementById('answer').value;
+/*    let answer = document.getElementById('answer').value;
     if(answer == "") {
         answer = Math.floor(Math.random() * 10000).toString();
         while(answer.length < 4) {
@@ -21,8 +20,18 @@ function setHiddenFields(){
   }
 
 
+}*/
+function setHiddenFields() {
+      if(answer == "") {
+    answer.value = Math.floor(Math.random() * 10000).toString();
+    while(answer.value.length < 4) {
+        answer.value = "0" + answer.value;
+    }
+  }
+  if(attempt == "") {
+      attempt = 0;
+  }
 }
-
 function setMessage(){
     let message = document.getElementById('message');
 
