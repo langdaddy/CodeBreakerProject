@@ -4,12 +4,56 @@
 
 
 //implement new functions here
+function setHiddenFields(){
+    let answer = document.getElementById('answer').value;
+    if(answer == "") {
+        answer = Math.floor(Math.random() * 10000).toString();
+        while(answer.length < 4) {
+            answer = "0" + answer;
+        }
+        document.getElementById('answer').value = answer;
+    }
 
+  let attempt = document.getElementById('attempt').value;
+
+  if(attempt == "") {
+      attempt = 0;
+  }
+
+
+}
+
+function setMessage(){
+    let message = document.getElementById('message');
+
+}
+
+function validateInput(){
+  if(input.length != 4) {
+      message.innerHTML = 'Guesses must be exactly 4 characters long.';
+      return;
+  } else {
+      attempt++;
+      document.getElementById('attempt').value = attempt;
+  }
+}
+
+function getResults(){
+
+}
+
+function showAnswer(){
+
+}
+
+function showReply(){
+
+}
 
 
 function guess(){
-  let answer = document.getElementById('answer').value;
-  let attempt = document.getElementById('attempt').value;
+
+
   let code = document.getElementById('code');
   let guessingDiv = document.getElementById('guessing-div');
 
@@ -20,24 +64,10 @@ let input = document.getElementById('user-guess').value;
 let replayDiv = document.getElementById('replay-div');
     message.innerHTML = "";
 
-    if(answer == "") {
-        answer = Math.floor(Math.random() * 10000).toString();
-        while(answer.length < 4) {
-            answer = "0" + answer;
-        }
-        document.getElementById('answer').value = answer;
-    }
-    if(attempt == "") {
-        attempt = 0;
-    }
 
-    if(input.length != 4) {
-        message.innerHTML = 'Guesses must be exactly 4 characters long.';
-        return;
-    } else {
-        attempt++;
-        document.getElementById('attempt').value = attempt;
-    }
+
+
+
 
     let correct = 0;
     let html = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
